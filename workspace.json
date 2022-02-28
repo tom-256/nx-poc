@@ -4,7 +4,8 @@
     "auth": "libs/auth",
     "data": "libs/data",
     "my-lib": "libs/my-lib",
+    "server-a": "apps/server-a",
     "server-b": "apps/server-b",
-    "todos": "apps/todos"
+    "server-c": "apps/server-c"
   }
 }

@@ -8,8 +8,7 @@ import { auth } from '@myorg/auth';
 
 const app = express();
 
-app.use(auth);
-
+console.log(auth());
 app.get('/api', (req, res) => {
   res.send({ message: 'Welcome to serverB!' });
 });
