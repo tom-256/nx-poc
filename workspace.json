@@ -1,6 +1,7 @@
 {
   "version": 2,
   "projects": {
+    "data": "libs/data",
     "server-b": "apps/server-b",
     "todos": "apps/todos"
   }
