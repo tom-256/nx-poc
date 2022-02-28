@@ -4,8 +4,11 @@
  */
 
 import * as express from 'express';
+import { auth } from '@myorg/auth';
 
 const app = express();
+
+app.use(auth);
 
 app.get('/api', (req, res) => {
   res.send({ message: 'Welcome to serverB!' });
