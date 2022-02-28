@@ -43,5 +43,8 @@ nx g @nrwl/express:lib --help
 
 アプリケーション起動
 ```sh
+# 単体
 nx serve server-a
+# 複数
+nx run-many --target=serve --projects=server-a,server-b --parallel
 ```
