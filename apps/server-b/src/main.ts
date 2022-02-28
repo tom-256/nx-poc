@@ -3,15 +3,15 @@
  * This is only a minimal backend to get started.
  */
 
-import { Todo } from '@myorg/data';
 import * as express from 'express';
+import { auth } from '@myorg/auth';
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const todo: Todo = { message: 'test', done: false };
 const app = express();
 
+app.use(auth);
+
 app.get('/api', (req, res) => {
-  res.send({ message: 'Welcome to todos!' });
+  res.send({ message: 'Welcome to serverB!' });
 });
 
 const port = process.env.port || 3333;
