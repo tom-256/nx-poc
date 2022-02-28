@@ -51,3 +51,6 @@ nx run-many --target=serve --projects=server-a,server-b --parallel
 
 with Docker
 https://blog.nrwl.io/nx-and-node-microservices-b6df3cd1bad6
+
+https://github.com/nrwl/node-microservices
+nx deploy
