@@ -29,6 +29,6 @@ nx g @nrwl/express:lib --help
 
 
     ✔  nx run my-lib:test  [existing outputs match the cache, left as is]
-    ✔  nx run server-b:test (2s)
+    ✔  nx run server-b:test (2s) <- #atuhを使っているserver-bのテストが走る
     ✔  nx run auth:test (6s)
 ```
