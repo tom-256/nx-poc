@@ -2,8 +2,12 @@
 
 ビルド
 ```sh
-nx run todos:build
+nx run server-a:build
+nx build server-a
 ```
+
+docker build時に使う
+https://nx.dev/workspace/run-commands-executor
 
 アプリケーション
 ```sh

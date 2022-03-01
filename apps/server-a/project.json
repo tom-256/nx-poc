@@ -5,12 +5,16 @@
   "targets": {
     "build": {
       "executor": "@nrwl/node:build",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/server-a",
         "main": "apps/server-a/src/main.ts",
         "tsConfig": "apps/server-a/tsconfig.app.json",
-        "assets": ["apps/server-a/src/assets"]
+        "assets": [
+          "apps/server-a/src/assets"
+        ]
       },
       "configurations": {
         "production": {
@@ -26,6 +30,16 @@
         }
       }
     },
+    "build-docker": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          "nx build server-a",
+          "docker buildx build -f ./apps/server-a/Dockerfile . -t tom256:server-a --load"
+        ],
+        "parallel": false
+      }
+    },
     "serve": {
       "executor": "@nrwl/node:execute",
       "options": {
@@ -34,14 +48,20 @@
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["apps/server-a/**/*.ts"]
+        "lintFilePatterns": [
+          "apps/server-a/**/*.ts"
+        ]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/server-a"],
+      "outputs": [
+        "coverage/apps/server-a"
+      ],
       "options": {
         "jestConfig": "apps/server-a/jest.config.js",
         "passWithNoTests": true
