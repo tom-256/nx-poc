@@ -58,3 +58,36 @@ https://blog.nrwl.io/nx-and-node-microservices-b6df3cd1bad6
 
 https://github.com/nrwl/node-microservices
 nx deploy
+
+
+docker buildのコマンドを追加する
+
+project.jsonに追記する
+```json
+    "build-docker": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          "nx build server-a",
+          "docker buildx build -f ./apps/server-a/Dockerfile . -t tom256:server-a --load"
+        ],
+        "parallel": false
+      }
+    },
+```
+nrwl/node:buildに下記オプション追加
+```json
+    "build": {
+      "executor": "@nrwl/node:build",
+      "options": {
+        "generatePackageJson": true
+      },
+```
+
+用語
+workspace...Gitリポジトリ
+project...各アプリケーション
+lib...ライブラリ
+plugin
+builder
+executor
