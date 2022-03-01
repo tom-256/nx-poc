@@ -14,7 +14,8 @@
         "tsConfig": "apps/server-a/tsconfig.app.json",
         "assets": [
           "apps/server-a/src/assets"
-        ]
+        ],
+        "generatePackageJson": true
       },
       "configurations": {
         "production": {
