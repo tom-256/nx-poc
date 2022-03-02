@@ -4,11 +4,11 @@
  */
 
 import * as express from 'express';
-
+import { myLib } from '@myorg/my-lib';
 const app = express();
 
 app.get('/api', (req, res) => {
-  res.send({ message: 'Welcome to server-a!' });
+  res.send({ message: `Welcome to server-a!, use ${myLib()}` });
 });
 
 const port = process.env.port || 3333;
