@@ -33,7 +33,13 @@
         "projects": "dependencies"
       }
     ],
-    "docker": [
+    "docker:build": [
+      {
+        "target": "build",
+        "projects": "self"
+      }
+    ],
+    "docker:push": [
       {
         "target": "build",
         "projects": "self"

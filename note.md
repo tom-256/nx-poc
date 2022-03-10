@@ -9,6 +9,13 @@ nx build server-a
 docker build時に使う
 https://nx.dev/workspace/run-commands-executor
 
+
+docker build
+npx nx docker:build server-a
+
+docker push
+npx nx docker:push server-a
+
 アプリケーション
 ```sh
 # 追加
