@@ -41,10 +41,19 @@
         "parallel": false
       }
     },
-    "docker": {
+    "docker:build": {
       "executor": "@nx-tools/nx-docker:build",
       "options": {
         "push": false,
+        "tags": [
+          "tom256/server-a:latest"
+        ]
+      }
+    },
+    "docker:push": {
+      "executor": "@nx-tools/nx-docker:build",
+      "options": {
+        "push": true,
         "tags": [
           "tom256/server-a:latest"
         ]
