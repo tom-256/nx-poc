@@ -33,7 +33,7 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: docker push
-        run: npx nx affected --target=docker:push ppparallel=2
+        run: npx nx affected --target=docker:push --parallel=2
   pr:
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'pull_request' }}
