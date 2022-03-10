@@ -23,7 +23,7 @@ jobs:
           echo "HEAD: ${{ steps.setSHAs.outputs.base }}"
       - uses: actions/setup-node@v3.0.0
         with:
-          node-version: '.node-verison'
+          node-version: '.node-version'
       - run: npm install
       - run: npx nx affected --target=build --parallel=3
       - run: npx nx affected --target=test --parallel=2
