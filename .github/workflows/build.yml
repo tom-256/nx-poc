@@ -15,13 +15,25 @@ jobs:
         with:
           fetch-depth: 0
       - name: Derive appropriate SHAs for base and head for `nx affected` commands
-        uses: nrwl/nx-set-shas@v2
-      - uses: actions/setup-node@v1
+        uses: nrwl/nx-set-shas@v2.0.2
+        id: setSHAs
+      - name: debug
+        run: |
+          echo "BASE: ${{ steps.setSHAs.outputs.base }}"
+          echo "HEAD: ${{ steps.setSHAs.outputs.base }}"
+      - uses: actions/setup-node@v3.0.0
         with:
           node-version: '14'
       - run: npm install
       - run: npx nx affected --target=build --parallel=3
       - run: npx nx affected --target=test --parallel=2
+      - name: Docker Login
+        uses: docker/login-action@v1.14.1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: docker push
+        run: npx nx affected --target=docker:push ppparallel=2
   pr:
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'pull_request' }}
@@ -31,10 +43,16 @@ jobs:
           ref: ${{ github.event.pull_request.head.ref }}
           fetch-depth: 0
       - name: Derive appropriate SHAs for base and head for `nx affected` commands
-        uses: nrwl/nx-set-shas@v2
-      - uses: actions/setup-node@v1
+        uses: nrwl/nx-set-shas@v2.0.2
+        id: setSHAs
+      - name: debug
+        run: |
+          echo "BASE: ${{ steps.setSHAs.outputs.base }}"
+          echo "HEAD: ${{ steps.setSHAs.outputs.base }}"
+      - uses: actions/setup-node@v3.0.0
         with:
           node-version: '14'
       - run: npm install
       - run: npx nx affected --target=build --parallel=3
       - run: npx nx affected --target=test --parallel=2
+      - run: npx nx affected --target=docker:build ppparallel=2
