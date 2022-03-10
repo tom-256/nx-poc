@@ -1,10 +1,8 @@
 import * as express from 'express';
 import { myLib } from '@myorg/my-lib';
 const app = express();
-// any fix
-// add feature-a
 app.get('/api', (req, res) => {
-  res.send({ message: `Welcome to server-a!, use ${myLib()}` });
+  res.send({ message: `Welcome to server-a!, use ${myLib()}.` });
 });
 
 const port = process.env.port || 3333;
