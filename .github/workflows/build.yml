@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.event_name != 'pull_request' }}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3.0.0
         name: Checkout [main]
         with:
           fetch-depth: 0
@@ -23,7 +23,7 @@ jobs:
           echo "HEAD: ${{ steps.setSHAs.outputs.base }}"
       - uses: actions/setup-node@v3.0.0
         with:
-          node-version: '14'
+          node-version: '.node-verison'
       - run: npm install
       - run: npx nx affected --target=build --parallel=3
       - run: npx nx affected --target=test --parallel=2
@@ -38,7 +38,7 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'pull_request' }}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3.0.0
         with:
           ref: ${{ github.event.pull_request.head.ref }}
           fetch-depth: 0
@@ -51,7 +51,7 @@ jobs:
           echo "HEAD: ${{ steps.setSHAs.outputs.base }}"
       - uses: actions/setup-node@v3.0.0
         with:
-          node-version: '14'
+          node-version: '.node-version'
       - run: npm install
       - run: npx nx affected --target=build --parallel=3
       - run: npx nx affected --target=test --parallel=2
