@@ -36,9 +36,18 @@
       "options": {
         "commands": [
           "nx build server-a",
-          "docker buildx build -f ./apps/server-a/Dockerfile . -t tom256:server-a --load"
+          "docker buildx build -f ./apps/server-a/Dockerfile . -t tom256/server-a --load"
         ],
         "parallel": false
+      }
+    },
+    "docker": {
+      "executor": "@nx-tools/nx-docker:build",
+      "options": {
+        "push": false,
+        "tags": [
+          "tom256/server-a:latest"
+        ]
       }
     },
     "serve": {
