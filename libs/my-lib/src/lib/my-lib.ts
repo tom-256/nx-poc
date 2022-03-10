@@ -1,3 +1,3 @@
 export function myLib(): string {
-  return 'fixed-my-lib';
+  return 'my-lib';
 }
