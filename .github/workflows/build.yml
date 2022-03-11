@@ -9,11 +9,6 @@ jobs:
   main:
     runs-on: ubuntu-latest
     if: ${{ github.event_name != 'pull_request' }}
-    env:
-      INPUTS_GIT_AUTH_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-      GIT_AUTH_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-      INPUTS_GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-      GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
     steps:
       - uses: actions/checkout@v3.0.0
         name: Checkout [main]
@@ -40,8 +35,9 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: docker push
-        run: npx nx affected --target=docker:push --parallel=2
+        run: npx nx affected --target=docker --parallel=2
         env:
+          INPUT_TAGS: 'type=sha'
           INPUT_PUSH: 'true'
           INPUT_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   pr:
