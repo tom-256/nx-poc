@@ -11,6 +11,9 @@ jobs:
     if: ${{ github.event_name != 'pull_request' }}
     env:
       INPUTS_GIT_AUTH_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+      GIT_AUTH_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+      INPUTS_GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+      GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
     steps:
       - uses: actions/checkout@v3.0.0
         name: Checkout [main]
