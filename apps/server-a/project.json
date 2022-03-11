@@ -54,12 +54,9 @@
       "executor": "@nx-tools/nx-docker:build",
       "options": {
         "push": true,
-        "metadata": {
-          "images": ["tom256/server-a"],
-          "tags": [
-            "type=sha"
-          ]
-        }
+        "tags": [
+          "tom256/server-a:latest"
+        ]
       }
     },
     "serve": {
