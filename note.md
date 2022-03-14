@@ -11,12 +11,14 @@ https://nx.dev/workspace/run-commands-executor
 
 
 docker build
+```bash
 INPUT_LOAD=true INPUT_TAGS=latest nx docker server-a
 INPUT_LOAD=true INPUT_TAGS=latest,type=sha nx docker server-a
-
+```
 docker push
+```bash
 INPUT_PUSH=true INPUT_TAGS=latest nx docker server-a
-
+```
 
 アプリケーション
 ```sh
