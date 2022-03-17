@@ -7,7 +7,7 @@ on:
 
 jobs:
   main:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     if: ${{ github.event_name != 'pull_request' }}
     steps:
       - uses: actions/checkout@v3.0.0
@@ -61,4 +61,4 @@ jobs:
       - run: npm install
       - run: npx nx affected --target=build --parallel=3
       - run: npx nx affected --target=test --parallel=2
-      - run: npx nx affected --target=docker:build ppparallel=2
+      - run: npx nx affected --target=docker --parallel=2
