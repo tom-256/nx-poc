@@ -41,7 +41,7 @@ jobs:
           INPUT_PUSH: 'true'
           INPUT_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   pr:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     if: ${{ github.event_name == 'pull_request' }}
     steps:
       - uses: actions/checkout@v3.0.0
