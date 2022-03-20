@@ -25,8 +25,8 @@ jobs:
         run: |
           TAG="${{ github.ref_name }}"
           APP=$($TAG | cut -f 1 -d "/")
-          echo "next tag version $TAG"
-          echo "::set-output name=TAG::$TAG"
+          echo "next tag version $APP"
+          echo "::set-output name=APP::$APP"
       - name: Derive appropriate SHAs for base and head for `nx affected` commands
         uses: nrwl/nx-set-shas@v2.0.2
         id: setSHAs
