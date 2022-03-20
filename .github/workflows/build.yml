@@ -62,3 +62,7 @@ jobs:
       - run: npx nx affected --target=build --parallel=3
       - run: npx nx affected --target=test --parallel=3
       - run: npx nx affected --target=docker --parallel=3
+        env:
+          INPUT_TAGS: 'type=sha'
+          INPUT_PUSH: 'false'
+          INPUT_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
