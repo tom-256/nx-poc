@@ -50,5 +50,5 @@ jobs:
         env:
           APP: ${{ steps.get-app-name.outputs.APP }}
           INPUT_TAGS: ${{ steps.get-tag.outputs.TAG }}
-          INPUT_PUSH: 'false'
+          INPUT_PUSH: 'true'
           INPUT_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
