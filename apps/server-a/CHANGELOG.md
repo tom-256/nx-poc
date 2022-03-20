@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.4](https://github.com/tom-256/nx-express/compare/server-a/v1.0.3...server-a/v1.0.4) (2022-03-20)
+
+
+### Bug Fixes
+
+* fix server-a ([74feb17](https://github.com/tom-256/nx-express/commit/74feb17d1763e6bd4237b06400612097f7776f53))
+
 ### [1.0.3](https://github.com/tom-256/nx-express/compare/server-a/v1.0.2...server-a/v1.0.3) (2022-03-20)
 
 
