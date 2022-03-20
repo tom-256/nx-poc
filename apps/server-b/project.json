@@ -5,12 +5,16 @@
   "targets": {
     "build": {
       "executor": "@nrwl/node:build",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/server-b",
         "main": "apps/server-b/src/main.ts",
         "tsConfig": "apps/server-b/tsconfig.app.json",
-        "assets": ["apps/server-b/src/assets"]
+        "assets": [
+          "apps/server-b/src/assets"
+        ]
       },
       "configurations": {
         "production": {
@@ -34,18 +38,31 @@
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["apps/server-b/**/*.ts"]
+        "lintFilePatterns": [
+          "apps/server-b/**/*.ts"
+        ]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/server-b"],
+      "outputs": [
+        "coverage/apps/server-b"
+      ],
       "options": {
         "jestConfig": "apps/server-b/jest.config.js",
         "passWithNoTests": true
       }
+    }
+  },
+  "release": {
+    "builder": "@nrwl/workspace:run-commands",
+    "options": {
+      "command": "npx standard-version",
+      "cwd": "apps/server-b"
     }
   },
   "tags": []
