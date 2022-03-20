@@ -1,0 +1,5 @@
+{
+  "path": ".",
+  "tag-prefix": "server-b/v",
+  "releaseCommitMessageFormat": "chore(release): server-b@{{currentTag}}"
+}

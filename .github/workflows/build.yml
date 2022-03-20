@@ -7,7 +7,7 @@ on:
 
 jobs:
   main:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     if: ${{ github.event_name != 'pull_request' }}
     steps:
       - uses: actions/checkout@v3.0.0
@@ -26,7 +26,7 @@ jobs:
           node-version-file: '.node-version'
       - run: npm install
       - run: npx nx affected --target=build --parallel=3
-      - run: npx nx affected --target=test --parallel=2
+      - run: npx nx affected --target=test --parallel=3
       - name: Docker Setup Buildx
         uses: docker/setup-buildx-action@v1.6.0
       - name: Docker Login
@@ -41,7 +41,7 @@ jobs:
           INPUT_PUSH: 'true'
           INPUT_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   pr:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     if: ${{ github.event_name == 'pull_request' }}
     steps:
       - uses: actions/checkout@v3.0.0
@@ -60,5 +60,9 @@ jobs:
           node-version-file: '.node-version'
       - run: npm install
       - run: npx nx affected --target=build --parallel=3
-      - run: npx nx affected --target=test --parallel=2
-      - run: npx nx affected --target=docker:build ppparallel=2
+      - run: npx nx affected --target=test --parallel=3
+      - run: npx nx affected --target=docker --parallel=3
+        env:
+          INPUT_TAGS: 'type=sha'
+          INPUT_PUSH: 'false'
+          INPUT_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
