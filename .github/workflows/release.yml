@@ -23,8 +23,7 @@ jobs:
       - name: get app name
         id: get-app-name
         run: |
-          TAG="${{ github.ref_name }}"
-          APP=$(echo $TAG | cut -f 1 -d "/")
+          APP=$(echo "${{ github.ref_name }}" | cut -f 1 -d "/")
           echo "app name $APP"
           echo "::set-output name=APP::$APP"
       - name: Derive appropriate SHAs for base and head for `nx affected` commands
@@ -47,12 +46,9 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: docker push
-        run:
-          echo "${{ steps.get-app-name.ouputs.APP }}"
-          echo $APP
-#          npx nx docker ${{ steps.get-app-name.ouputs.APP }}
+        run: npx nx docker $APP
         env:
-          APP: ${{ steps.get-app-name.ouputs.APP }}
+          APP: ${{ steps.get-app-name.outputs.APP }}
           INPUT_TAGS: ${{ steps.get-tag.outputs.TAG }}
           INPUT_PUSH: 'false'
           INPUT_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
