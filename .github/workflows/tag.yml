@@ -1,4 +1,4 @@
-name: CI
+name: Release
 on:
   push:
     tags:
@@ -24,8 +24,8 @@ jobs:
         id: get-app-name
         run: |
           TAG="${{ github.ref_name }}"
-          APP=$($TAG | cut -f 1 -d "/")
-          echo "next tag version $APP"
+          APP=$(echo $TAG | cut -f 1 -d "/")
+          echo "app name $APP"
           echo "::set-output name=APP::$APP"
       - name: Derive appropriate SHAs for base and head for `nx affected` commands
         uses: nrwl/nx-set-shas@v2.0.2
