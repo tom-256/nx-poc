@@ -8,8 +8,7 @@ import { auth } from '@myorg/auth';
 import { myLib } from '@myorg/my-lib';
 
 const app = express();
-
-console.log(auth());
+// any fix server-b
 app.get('/api', (req, res) => {
   res.send({ message: `Welcome to serverB! ${myLib()}` });
 });
