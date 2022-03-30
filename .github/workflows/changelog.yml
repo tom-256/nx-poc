@@ -3,8 +3,12 @@ on:
   workflow_dispatch:
     inputs:
       app:
+        type: choice
         description: "app name"
         required: true
+        options:
+          - "server-a"
+          - "server-b"
 jobs:
   main:
     runs-on: ubuntu-20.04
@@ -29,5 +33,6 @@ jobs:
           git config --local user.name "GitHub Actions"
           git config --local user.email "actions@github.com"
           npx nx release $APP
+          git push --follow-tags origin main
         env:
           APP:  ${{ github.event.inputs.app }}
