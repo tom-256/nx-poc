@@ -10,6 +10,14 @@ All notable changes to this project will be documented in this file. See [standa
 * any fix ([fe55191](https://github.com/tom-256/nx-poc/commit/fe55191bc33f6f42455b17dc189bb46e9f7b5154))
 * hogehoge ([4be8903](https://github.com/tom-256/nx-poc/commit/4be890317fa392e456e71172731a5f43dab67702))
 
+### 1.0.1 (2022-03-30)
+
+
+### Bug Fixes
+
+* any fix ([fe55191](https://github.com/tom-256/nx-poc/commit/fe55191bc33f6f42455b17dc189bb46e9f7b5154))
+* hogehoge ([4be8903](https://github.com/tom-256/nx-poc/commit/4be890317fa392e456e71172731a5f43dab67702))
+
 ### 1.0.1 (2022-03-28)
 
 
