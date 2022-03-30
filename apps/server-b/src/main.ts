@@ -7,7 +7,7 @@ import * as express from 'express';
 import { myLib } from '@myorg/my-lib';
 
 const app = express();
-// some fix server-b
+// some fix
 app.get('/api', (req, res) => {
   res.send({ message: `Welcome to serverB! ${myLib()}` });
 });
