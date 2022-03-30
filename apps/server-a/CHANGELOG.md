@@ -7,6 +7,14 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Bug Fixes
 
+* fix server-a ([896dfa8](https://github.com/tom-256/nx-poc/commit/896dfa887a5efb4a31f6aa11db06878e180a752a))
+* hogehoge ([4be8903](https://github.com/tom-256/nx-poc/commit/4be890317fa392e456e71172731a5f43dab67702))
+
+### [1.0.8](https://github.com/tom-256/nx-poc/compare/server-a/v1.0.7...server-a/v1.0.8) (2022-03-30)
+
+
+### Bug Fixes
+
 * hogehoge ([4be8903](https://github.com/tom-256/nx-poc/commit/4be890317fa392e456e71172731a5f43dab67702))
 
 ### [1.0.8](https://github.com/tom-256/nx-express/compare/server-a/v1.0.7...server-a/v1.0.8) (2022-03-28)
