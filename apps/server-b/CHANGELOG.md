@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/tom-256/nx-poc/compare/server-b/v1.0.1...server-b/v1.1.0) (2022-03-30)
+
+
+### Features
+
+* fix a, fix b ([ae51b86](https://github.com/tom-256/nx-poc/commit/ae51b8633b88ba0cf5dc30ef3bb15270b2d75f80))
+
 ### 1.0.1 (2022-03-30)
 
 
