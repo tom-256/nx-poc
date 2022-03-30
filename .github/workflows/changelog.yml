@@ -1,0 +1,30 @@
+name: Changelog
+on:
+  workflow_dispatch:
+    inputs:
+      app:
+        type: string
+
+jobs:
+  main:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3.0.0
+        name: Checkout
+        with:
+          fetch-depth: 0
+      - name: get tag version
+      - name: Derive appropriate SHAs for base and head for `nx affected` commands
+        uses: nrwl/nx-set-shas@v2.0.2
+        id: setSHAs
+      - name: debug
+        run: |
+          echo "BASE: ${{ steps.setSHAs.outputs.base }}"
+          echo "HEAD: ${{ steps.setSHAs.outputs.head }}"
+      - uses: actions/setup-node@v3.0.0
+        with:
+          node-version-file: '.node-version'
+      - run: npm install
+      - run: npx nx release $APP
+        env:
+          APP:  ${{ github.event.inputs.app }}
