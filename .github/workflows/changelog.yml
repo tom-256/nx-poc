@@ -3,8 +3,8 @@ on:
   workflow_dispatch:
     inputs:
       app:
-        type: string
-
+        description: "app name"
+        required: true
 jobs:
   main:
     runs-on: ubuntu-20.04
@@ -13,7 +13,6 @@ jobs:
         name: Checkout
         with:
           fetch-depth: 0
-      - name: get tag version
       - name: Derive appropriate SHAs for base and head for `nx affected` commands
         uses: nrwl/nx-set-shas@v2.0.2
         id: setSHAs
