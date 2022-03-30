@@ -4,11 +4,10 @@
  */
 
 import * as express from 'express';
-import { auth } from '@myorg/auth';
 import { myLib } from '@myorg/my-lib';
 
 const app = express();
-// some fix server-b
+// fix server-b
 app.get('/api', (req, res) => {
   res.send({ message: `Welcome to serverB! ${myLib()}` });
 });

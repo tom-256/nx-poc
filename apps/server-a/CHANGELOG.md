@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.0.8](https://github.com/tom-256/nx-poc/compare/server-a/v1.0.7...server-a/v1.0.8) (2022-03-30)
+
+
+### Bug Fixes
+
+* hogehoge ([4be8903](https://github.com/tom-256/nx-poc/commit/4be890317fa392e456e71172731a5f43dab67702))
+
 ### [1.0.8](https://github.com/tom-256/nx-express/compare/server-a/v1.0.7...server-a/v1.0.8) (2022-03-28)
 
 ### [1.0.7](https://github.com/tom-256/nx-express/compare/server-a/v1.0.6...server-a/v1.0.7) (2022-03-20)
